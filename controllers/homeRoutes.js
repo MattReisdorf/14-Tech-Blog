@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         }
       ]
     }).then(function(postData) {
-      console.log(postData)
+      console.log('THIS IS POSTDATA', postData)
       res.render('home', {posts: postData, loggedIn: req.session.logged_in});      
     })
   } catch (err) {

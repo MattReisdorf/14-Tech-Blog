@@ -1,4 +1,3 @@
-console.log("hello login file")
 const loginFormHandler = async (event) => {
   event.preventDefault();
   console.log("login form triggered");
