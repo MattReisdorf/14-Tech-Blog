@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
       ]
     }).then(function(postData) {
       console.log(postData)
-      res.render('home', {posts: postData});      
+      res.render('home', {posts: postData, loggedIn: req.session.logged_in});      
     })
   } catch (err) {
     res.status(500).json(err);
