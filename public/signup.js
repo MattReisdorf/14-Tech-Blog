@@ -8,15 +8,8 @@ const signupFormHandler = async(event) => {
     const password = document.querySelector('#password-signup').value.trim();
     const passConfirm = document.querySelector('#passCon-signup').value.trim();
     const userName = document.querySelector('#user-signup').value.trim();
-    const passTrue = false;
 
-    if (password === passConfirm){
-        alert('Passwords match!');
-        return passTrue = true;
-    } else if (password !== passConfirm){
-        alert('Passwords do not match, please try again.')
-        return;
-    }
+    const passTrue = passtrue(password, passConfirm);
 
     if (email && password && passTrue && userName) {
         router.post('/login', async (req, res) => {
@@ -41,6 +34,17 @@ const signupFormHandler = async(event) => {
     }
 
 }
+
+const passtrue = () => {
+    if (input1 === input2){
+        alert('Passwords match!')
+        return true;
+    } else if (input1 != input2) {
+        alert('Passwords do not match, please try again.');
+        return false;
+    }
+}
+
 
 document
     .querySelector('#signUp')
